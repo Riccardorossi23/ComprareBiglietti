@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:ComprareBiglietti"
         mc:Ignorable="d"
         Title="Prenotazione" Height="710" Width="370">
+    
 
     <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden" MaxHeight="700">

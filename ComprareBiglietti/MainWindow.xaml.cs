@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Ticket;
 
 namespace ComprareBiglietti
 {
@@ -20,9 +21,77 @@ namespace ComprareBiglietti
     /// </summary>
     public partial class MainWindow : Window
     {
+        private List<Cliente> Cliente = new List<Cliente>();
+        private List<Prenotazione> prenotazioni = new List<Prenotazione>();
+        private string[] orario = new string[] { "18:00", "20:30", "23:00" };
         public MainWindow()
         {
             InitializeComponent();
+            rdbM.IsChecked = true;
+        }
+        private void btnAggiungi_Click(object sender, RoutedEventArgs e)
+        {
+            if(cmbCliente.SelectedIndex!=-1 && cmbSeleziona.SelectedIndex!=-1 && dpData.SelectedDate != -1)
+            {
+                DateTime data = Convert.ToDateTime(dpData.Text);
+                Prenotazione pre = new Prenotazione(data, cmbSeleziona.Text, clienti[cmbCliente.SelectedIndex]);
+                String prezzo = Convert.ToString(pre.CostoPrenotazione());
+                prenotazioni.Add(pre);
+                lbo
+            }
+        }
+        private void btnAggiungiCli_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string nome = null;
+                string cognome = null;
+
+                if (txtName.Text != null)
+                {
+                    nome = txtName.Text;
+
+                }
+                else MessageBox.Show("Inserire un nome", "Errore", MessageBoxButton.OK, MessageBoxImage.Error);
+
+                if (txtCognome.Text != "")
+                {
+                    cognome = txtCognome.Text;
+
+                }
+                else MessageBox.Show("Inserire un cognome", "Errore", MessageBoxButton.OK, MessageBoxImage.Error);
+
+                Cliente cliente = new Cliente(nome, cognome);
+
+                if (rdbF.IsChecked == false && rdbM.IsChecked == false)
+                    MessageBox.Show("Selezionare il sesso", "Errore", MessageBoxButton.OK, MessageBoxImage.Error);
+                else
+                {
+                    if (rdbM.IsChecked == true)
+                    {
+                        cliente.SetSesso(true);
+                    }
+                    else
+                    {
+                        cliente.SetSesso(false);
+                    }
+                }
+
+                cliente.SetCellulare(txtCell.Text);
+
+
+                cmbSelezionaCliente1.Items.Add(cliente.Stampa());
+                cmbSelezionaCliente2.Items.Add(cliente.Stampa());
+
+                txtName.Clear();
+                txtCognome.Clear();
+                txtCell.Clear();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

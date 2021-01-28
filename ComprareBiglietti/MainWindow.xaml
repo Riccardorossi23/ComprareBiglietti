@@ -60,7 +60,7 @@
                                     </Button.Content>
                                 </Button>
                                 <Label Grid.Row="5" Content="Seleziona il cliente: " FontWeight="Bold" Foreground="Brown" VerticalAlignment="Center"/>
-                                <ComboBox x:Name="cmbSeleziona" Grid.Row="5" Grid.Column="1" Height="20" Width="100" VerticalContentAlignment="Center"/>
+                                <ComboBox x:Name="cmbSelezionaCliente1" Grid.Row="5" Grid.Column="1" Height="20" Width="100" VerticalContentAlignment="Center"/>
                                 <DatePicker Name="dpData" Grid.Row="6" Grid.ColumnSpan="2" Height="50" FontWeight="Bold" Width="160" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
                                 <Label Grid.Row="7" Content="Orario: " FontWeight="Bold" Foreground="Brown" VerticalAlignment="Center"/>
                                 <ComboBox x:Name="cmbOrario" Grid.Row="7" Grid.Column="1" Height="20" Width="100" VerticalContentAlignment="Center"/>
@@ -81,7 +81,7 @@
                                 <ListBox Name="lst1" Width="400" Height="76" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Stretch" HorizontalAlignment="Center" />
                                 <Label Grid.Row="10" Grid.Column="0" Content="seleziona il cliente " FontWeight="Bold" Foreground="Brown" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10"/>
                                 <Label Grid.Row="10" Grid.Column="1" Content="seleziona orario " FontWeight="Bold" Foreground="Brown" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10"/>
-                                <ComboBox x:Name="cmbCliente" Grid.Row="11" Grid.Column="0" Height="20" Width="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                                <ComboBox x:Name="cmbSelezionaCliente2" Grid.Row="11" Grid.Column="0" Height="20" Width="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
                                 <ComboBox x:Name="cmbSelezionaOrario" Grid.Row="11" Grid.Column="1" Height="20" Width="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
                                 <Button x:Name="btnPrenotaCliente" Grid.Column="0" Grid.Row="12" Foreground="White" FontWeight="Bold" Height="30" Width="150" Background="Transparent" BorderBrush="Transparent" VerticalAlignment="Bottom" HorizontalAlignment="Center">
                                     <Button.Content>

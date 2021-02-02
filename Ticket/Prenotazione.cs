@@ -15,10 +15,12 @@ namespace Ticket
 
         public Cliente Cliente { get; set; }
 
-        public Prenotazione(DateTime data, string ora, Cliente cliente)
+        public Prenotazione(DateTime data, string ora, Cliente Cliente)
         {
-            Cliente = cliente;
-            cliente.AddPrenotazione(this);
+            this.Cliente = Cliente;
+            Cliente.AddPrenotazione(this);
+            this.Data = data;
+            this.Ora = ora;
         }
         public string Stampa()
         {

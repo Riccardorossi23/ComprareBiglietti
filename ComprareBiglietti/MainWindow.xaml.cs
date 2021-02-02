@@ -21,7 +21,7 @@ namespace ComprareBiglietti
     /// </summary>
     public partial class MainWindow : Window
     {
-        private List<Cliente> Cliente = new List<Cliente>();
+        private List<Cliente> clienti = new List<Cliente>();
         private List<Prenotazione> prenotazioni = new List<Prenotazione>();
         private string[] orario = new string[] { "18:00", "20:30", "23:00" };
         public MainWindow()
@@ -31,14 +31,7 @@ namespace ComprareBiglietti
         }
         private void btnAggiungi_Click(object sender, RoutedEventArgs e)
         {
-            if(cmbCliente.SelectedIndex!=-1 && cmbSeleziona.SelectedIndex!=-1 && dpData.SelectedDate != -1)
-            {
-                DateTime data = Convert.ToDateTime(dpData.Text);
-                Prenotazione pre = new Prenotazione(data, cmbSeleziona.Text, clienti[cmbCliente.SelectedIndex]);
-                String prezzo = Convert.ToString(pre.CostoPrenotazione());
-                prenotazioni.Add(pre);
-                lbo
-            }
+
         }
         private void btnAggiungiCli_Click(object sender, RoutedEventArgs e)
         {

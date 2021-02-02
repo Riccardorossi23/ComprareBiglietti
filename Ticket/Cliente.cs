@@ -13,10 +13,17 @@ namespace Ticket
         private string cellulare;
         private string sesso;
 
+        private List<Prenotazione> prenotazioni = new List<Prenotazione>();
+
         public Cliente(string nome, string cognome)
         {
             this.nome = nome;
             this.cognome = cognome;
+        }
+
+        internal void AddPrenotazione(Prenotazione p)
+        {
+            prenotazioni.Add(p);
         }
 
         public string GetSesso()
@@ -61,5 +68,6 @@ namespace Ticket
         {
             return $"{sesso},{nome} {cognome}";
         }
+        
     }
 }

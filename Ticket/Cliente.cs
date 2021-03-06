@@ -21,9 +21,13 @@ namespace Ticket
             this.cognome = cognome;
         }
 
-        internal void AddPrenotazione(Prenotazione p)
+        public void AddPrenotazione(Prenotazione p)
         {
             prenotazioni.Add(p);
+        }
+        public void RemovePrenotazione(Prenotazione p)
+        {
+            prenotazioni.Remove(p);
         }
 
         public string GetSesso()
@@ -68,6 +72,37 @@ namespace Ticket
         {
             return $"{sesso},{nome} {cognome}";
         }
-        
+        public int Contapre()
+        {
+            int count = 0;
+            for(int i=0; i<prenotazioni.Count; i++)
+            {
+                count++;
+            }
+            return count;
+        }
+        public double Contaprecli()
+        {
+            double costo = 0;
+            for (int i = 0; i < prenotazioni.Count; i++)
+            {
+                costo = costo + prenotazioni[i].CostoPrenotazione();
+            }
+            return costo; 
+        }
+        public int ContapreEvent(string Ora)
+        {
+            int count = 0;
+            for (int i = 0; i < prenotazioni.Count; i++)
+            {
+                if(prenotazioni[i].Ora==Ora)
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
+
+
     }
 }

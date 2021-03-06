@@ -24,7 +24,7 @@ namespace Ticket
         }
         public string Stampa()
         {
-            return $"{Cliente.Stampa()}{Data.ToShortDateString()}{Ora} {CostoPrenotazione()}€";
+            return $"{Cliente.Stampa()} {Data.ToShortDateString()} {Ora} {CostoPrenotazione()}€";
         }
         public double CostoPrenotazione()
         {
